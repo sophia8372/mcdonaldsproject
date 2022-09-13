@@ -1,0 +1,50 @@
+Vue報錯
+
+* Component name "xxx" should always be multi-word
+ERROR  Failed to compile with 1 error
+[eslint]
+...
+  1:1  error  Component name "xxx" should always be multi-word  vue/multi-word-component-names
+
+ESlint配置後，要求代碼格式規範的同時，也規定了組件的名稱格式，要寫成 “XXXName” 的格式，不能是單個單詞。
+所以除了改名，另一種解決方法是在 vue.config.js 文件中加一行 lintOnSave: false，重新npm run serve。
+
+vue.config.js
+module.exports = defineConfig({
+  transpileDependencies: true,
+  lintOnSave: false //ADD
+})
+
+參考資料: https://blog.csdn.net/M_Nobody/article/details/123307330
+
+
+
+* Already included file name ‘×××‘ differs from file name ‘×××‘ only in casing.
+Vue 引入路徑 import ××× from ‘×××’ 報錯
+引入的文件名和地址都是正確的，但是還是報錯誤
+Already included file name ‘×××’ differs from file name ‘×××’ only in casing.
+
+把文件名的後綴.vue去掉
+import Nav from './components/Nav/Nav.vue';
+import Nav from './components/Nav/Nav';
+
+路徑作用
+./	當前文件同級目錄
+../	當前文件上一級目錄
+@	在引入模塊時，可以使用 @ 代替 /src 目錄，指相對路徑
+
+參考資料: https://blog.csdn.net/estrusKing/article/details/118228252
+
+
+
+* Vue.js is detected on this page.
+Devtools inspection is not available because it’s in production mode or explicitly disabled by the author.
+
+在瀏覽器地址欄輸入chrome://version/ ，複製 設定檔路徑
+\Extensions\nhdogjmejiglipccpnnnanhbledajbpd\6.2.1_0\manifest.json
+"persistent": false, //改為true
+"persistent": true,
+
+關閉瀏覽器所有窗口之後重新打開，就會發現Vue devtools擴展的圖標變綠了，按F12也能看到VUE介面
+
+參考資料: https://segmentfault.com/a/1190000041912537
