@@ -1,0 +1,41 @@
+MVVM框架
+
+vue-cli
+
+webpack打包
+
+接口數據
+
+vue-router
+
+axios應用
+
+header
+- 基本頁面
+- 詳情頁
+- star組件
+
+goods
+- 頁面布局
+- 數據獲取
+- 菜單列表
+- 食品列表
+- better-scroll應用
+- shopcart購物車
+- cartcontrol
+- 購物車詳情頁
+
+food
+- 商品詳情頁
+- 評價列表
+
+ratings
+- ratings組件
+
+seller
+- seller組件
+- 項目優化處理
+
+編譯打包
+
+總結
