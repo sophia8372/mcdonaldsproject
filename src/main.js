@@ -44,5 +44,6 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
+  // 5. 創建和掛載
   router: router,
 }).$mount('#app')
